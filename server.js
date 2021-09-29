@@ -80,7 +80,6 @@ app.put("/pokemon/:idx", (req, res) => {
       speed: req.body.speed,
     },
   };
-  console.log(pokedex[req.params.idx].img);
   pokedex[req.params.idx] = obj;
   res.redirect("/pokemon");
 });
