@@ -1,0 +1,16 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  font-family: "Varela Round", sans-serif;
+  background: url(https://dribbble.com/shots/2866617-BB-PIKACHU);
+}
+input {
+  margin: 0.4rem 0rem;
+}
+input[type="submit"] {
+  padding: 0.6rem;
+  cursor: pointer;
+}
