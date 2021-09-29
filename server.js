@@ -55,6 +55,12 @@ app.post("/pokemon", (req, res) => {
   res.redirect("/pokemon");
 });
 
+// DELETE
+app.delete("/pokemon/:idx", (req, res) => {
+  pokedex.splice(req.params.idx, 1);
+  res.redirect("/pokemon");
+});
+
 // EDIT
 app.get("/pokemon/:idx/edit", (req, res) => {
   res.render("edit.ejs", {
