@@ -14,16 +14,12 @@
   <body>
     <h1>New Pokemon</h1>
     <!--  NOTE: action will be the route, method will be the HTTP verb-->
-    <form action="/index" method="POST">
+    <form action="/pokemon" method="POST">
       Name: <input type="text" name="name" placeholder="Name" /><br />
       Image:
-      <input
-        type="text"
-        name="type"
-        placeholder="Link an image source link"
-      /><br />
+      <input type="text" name="img" placeholder="Link an image" /><br />
       Type: <input type="text" name="type" placeholder="Type" /><br />
-      HP: <input type="text" name="hp" placeholder="HP" /><br />
+      HP: <input type="text" name="hp" placeholder="hp" /><br />
       Attack: <input type="text" name="attack" placeholder="Attack" /><br />
       Defense: <input type="text" name="defense" placeholder="Defense" /><br />
       Spattack:
