@@ -2,12 +2,15 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 const pokedex = require("./models/pokemon.js");
+const methodOverride = require("method-override");
 
 // Static files
 app.use(express.static("public"));
 app.use("/css", express.static(__dirname + "public/css"));
 
 app.use(express.urlencoded({ extended: false }));
+
+app.use(methodOverride("_method"));
 
 //INDEX
 app.get("/pokemon", (req, res) => {
@@ -58,6 +61,28 @@ app.get("/pokemon/:idx/edit", (req, res) => {
     name: pokedex[req.params.idx].name,
     index: req.params.idx,
   });
+});
+
+//PUT
+app.put("/pokemon/:idx", (req, res) => {
+  let arrTypes = [];
+  arrTypes = String(req.body.type).split(" ");
+  let obj = {
+    name: pokedex[req.params.idx].name,
+    img: pokedex[req.params.idx].img,
+    type: arrTypes,
+    stats: {
+      hp: req.body.hp,
+      attack: req.body.atack,
+      defense: req.body.defense,
+      spattack: req.body.spattack,
+      spdefense: req.body.spdefense,
+      speed: req.body.speed,
+    },
+  };
+  console.log(pokedex[req.params.idx].img);
+  pokedex[req.params.idx] = obj;
+  res.redirect("/pokemon");
 });
 
 app.listen(PORT, () => {});
