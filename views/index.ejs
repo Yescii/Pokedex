@@ -19,7 +19,9 @@
     <div class="img-index">
       <% %> <% pokedex.forEach((character, idx)=>{ %>
       <div class="pokemon-img">
-        <a href="<%= idx %>"><img src="<%= character.img%>" alt="" /></a>
+        <a href="/index/<%= idx %>"
+          ><img src="<%= character.img%>" alt="<%= character.img %>"
+        /></a>
         <p><%= character.name%></p>
       </div>
       <% }) %>
