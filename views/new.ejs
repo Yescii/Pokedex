@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Create a new Pokemon</title>
+    <link rel="stylesheet" href="/css/new.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1>New Pokemon</h1>
+    <!--  NOTE: action will be the route, method will be the HTTP verb-->
+    <form action="/index" method="POST">
+      Name: <input type="text" name="name" placeholder="Name" /><br />
+      Image:
+      <input
+        type="text"
+        name="type"
+        placeholder="Link an image source link"
+      /><br />
+      Type: <input type="text" name="type" placeholder="Type" /><br />
+      HP: <input type="text" name="hp" placeholder="HP" /><br />
+      Attack: <input type="text" name="attack" placeholder="Attack" /><br />
+      Defense: <input type="text" name="defense" placeholder="Defense" /><br />
+      Spattack:
+      <input type="text" name="spattack" placeholder="Spattack" /><br />
+      Spdefense:
+      <input type="text" name="spdefense" placeholder="Spdefense" /><br />
+      Speed: <input type="text" name="speed" placeholder="Speed" /><br />
+
+      <input type="submit" value="Create Pokemon" />
+    </form>
+  </body>
+</html>
