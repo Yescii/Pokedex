@@ -24,7 +24,11 @@ app.get("/pokemon/:idx", (req, res) => {
   // get all types into one string
   let idxType = pokedex[req.params.idx].type.join(" ");
 
-  res.render("show.ejs", { character: pokedex[req.params.idx], type: idxType });
+  res.render("show.ejs", {
+    character: pokedex[req.params.idx],
+    type: idxType,
+    index: req.params.idx,
+  });
 });
 
 // CREATE
@@ -46,6 +50,14 @@ app.post("/pokemon", (req, res) => {
   };
   pokedex.push(obj);
   res.redirect("/pokemon");
+});
+
+// EDIT
+app.get("/pokemon/:idx/edit", (req, res) => {
+  res.render("edit.ejs", {
+    name: pokedex[req.params.idx].name,
+    index: req.params.idx,
+  });
 });
 
 app.listen(PORT, () => {});
