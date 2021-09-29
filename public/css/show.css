@@ -24,6 +24,17 @@ body {
   color: black;
   width: 5rem;
 }
+input[type="submit"] {
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  border: black 2px solid;
+  color: #ef233c;
+  width: 8rem;
+}
 h1 {
   margin: 1rem;
 }
